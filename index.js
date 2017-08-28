@@ -901,10 +901,11 @@
 		 * @param {Object} batch
 		 * @param {Number} configId
 		 */
-		queueBatchOfDocuments: function(batch, configId) {
+		queueBatchOfDocuments: function(batch, configId, jobId) {
 			var result = this.runRequest("POST", "/document/batch", {
 				getParams: {
-					config_id: configId
+					config_id: configId,
+					job_id: jobId
 				},
 				postParams: batch
 			});
